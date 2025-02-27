@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 /*TODO
  * Projectiles
- * Sound
+ * Sound (made progres)
  * Enemies/Stuff to shoot
  * Moveing astroids in random diretion
  * Spawn asteroids randomly 
