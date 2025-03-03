@@ -33,8 +33,10 @@ public class PlayerControler : MonoBehaviour
     public Rigidbody rb;
     public float speed = 10000f, forwardControl, verticalControl, horizontalControl, mouseSensitivity = 2.0f;
     public Vector2 mouseChange, mouseDiretion, shipDiretion;
-    public AudioSource engineSoundSource;
-    public AudioClip engineSoundClip;
+    public AudioSource engineSoundSource, lasersoundsource;
+    public AudioClip engineSoundClip, laserSoundclip;
+    public GameObject laser, rightLazerspawnpoint, leftLaserspawnpoint;
+ 
 
     private void Start()
     {
@@ -58,6 +60,16 @@ public class PlayerControler : MonoBehaviour
         rb.AddRelativeTorque(-mouseup, mouseside, 0, ForceMode.VelocityChange);
 
          engineSoundSource.volume =Mathf.Clamp ((Mathf.Abs(forwardControl)+ Mathf.Abs(verticalControl) + Mathf.Abs(horizontalControl)),0f,1f);
+
+        //fire my lazers
+        if (Input.GetMouseButtonDown(0))
+        {
+            Instantiate(laser, leftLaserspawnpoint.transform.position, leftLaserspawnpoint.transform.rotation);
+            Instantiate(laser, rightLazerspawnpoint.transform.position, rightLazerspawnpoint.transform.rotation);
+            lasersoundsource.PlayOneShot(laserSoundclip);
+            
+        }
+
 
         //if (forwardControl != 0 || verticalControl != 0 || horizontalControl != 0)
         //{ 

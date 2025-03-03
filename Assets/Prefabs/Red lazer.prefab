@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.019199189, y: 0.017492764, z: 0.016142102}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -102,7 +102,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_templateMaterial: {fileID: 2100000, guid: 974b33ccbd786464a825203eb88b8dab, type: 2}
   m_doNotOverwriteTemplateMaterialProperties: 0
-  m_startPos: {x: 0, y: 100, z: 0}
+  m_startPos: {x: 0, y: 0, z: 100}
   m_endPos: {x: 0, y: 0, z: 0}
   m_lineColor: {r: 0.9547169, g: 0.048636444, b: 0.07772613, a: 1}
   m_lineWidth: 20
@@ -119,3 +119,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bffbe1c835dbab4479e3f80fc9195b27, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 100
