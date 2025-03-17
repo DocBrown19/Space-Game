@@ -14,4 +14,16 @@ public class Redlazer : MonoBehaviour
     {
         transform.Translate(Vector3.forward*Time.deltaTime*speed);  
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Asteroid"))
+        {
+            other.GetComponent<Fracture>().FractureObject();
+            Destroy(gameObject);
+            
+
+        }
+      
+    }
 }
