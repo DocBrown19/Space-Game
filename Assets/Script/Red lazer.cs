@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class Redlazer : MonoBehaviour
 {
-    public int speed = 1;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
+    public float despawnTime = 0.5f, timer=0f;
     void Start()
     {
         
@@ -12,15 +12,21 @@ public class Redlazer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward*Time.deltaTime*speed);  
+        //Destorys the lazers
+        timer += Time.deltaTime;
+        if (timer > despawnTime) {
+            Destroy(gameObject);
+        }
+         
     }
 
     private void OnTriggerEnter(Collider other)
     {
+        //Makes the astriod go boom
         if (other.CompareTag("Asteroid"))
         {
             other.GetComponent<Fracture>().FractureObject();
-            Destroy(gameObject);
+            Destroy(gameObject); //this desroys the lazer
             
 
         }
