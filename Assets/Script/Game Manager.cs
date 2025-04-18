@@ -3,14 +3,18 @@ using System.Collections;
 
 public class GameManager : MonoBehaviour
 {
-    public GameObject[] astroids;
-    public GameObject player;
-    public int minAstroids = 100, maxAstroids = 500, minSpawnTime = 30, maxSpawnTime = 60, minAstroidFieldSize = 500, maxAstroidFieldSize = 1000;
+    [SerializeField]
+    private GameObject[] astroids;
+    private GameObject player;
+    [SerializeField]
+    private int minAstroids = 100, maxAstroids = 500, minSpawnTime = 30, maxSpawnTime = 60, minAstroidFieldSize = 500, maxAstroidFieldSize = 1000;
     private int randomNumOfastroids, randomAsteroid, randSpawnTime;
     private Vector3 randomSpawnLocation, randomLocationOffset;
     private float randX, randY, randZ;
     void Start()
     {
+        player = GameObject.Find("Player Ship");
+        //for loop to spawn in random number of starter asteroids
         randomNumOfastroids = Random.Range(minAstroids, maxAstroids);
         randSpawnTime = Random.Range(minSpawnTime, maxSpawnTime + 1);
         for (int i = 0; i < randomNumOfastroids; i++) 

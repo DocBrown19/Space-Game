@@ -3,7 +3,7 @@ using UnityEngine;
 public class Redlazer : MonoBehaviour
 {
 
-    public float despawnTime = 0.5f, timer=0f;
+    private float despawnTime = 0.5f, timer=0f;
     void Start()
     {
         

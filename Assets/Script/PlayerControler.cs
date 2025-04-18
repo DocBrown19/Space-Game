@@ -34,23 +34,26 @@ public class PlayerControler : MonoBehaviour
 {
     private Rigidbody rb;
     private float forwardControl, verticalControl, horizontalControl;
-    public float speed = 10000f, mouseSensitivity = 2.0f, rollControl, rollSensitivity = 100f, boost = 30f, maxBoostSpeed = 300f,minBoostSpeed = 30f,boostAcceleration = 120f,LazerSpeed = 50f;
+    [SerializeField]
+    private float speed = 10000f, mouseSensitivity = 2.0f, rollControl, rollSensitivity = 100f, boost = 30f, maxBoostSpeed = 300f,minBoostSpeed = 30f,boostAcceleration = 120f,LazerSpeed = 50f;
     private Vector2 mouseChange, mouseDiretion, shipDiretion;
+    [SerializeField]
     private AudioSource engineSoundSource, lasersoundsource;
-    private AudioClip engineSoundClip, laserSoundclip;
-    public GameObject laser, rightLazerspawnpoint, leftLaserspawnpoint;
+    private AudioClip laserSoundclip;
+    private GameObject laser;
+    private GameObject rightLazerSpawnPoint, leftLaserSpawnPoint;
     private Camera playerCam;
  
  
 
     private void Start()
     {
+        leftLaserSpawnPoint = GameObject.Find("Left Lazer spwan point");
+        rightLazerSpawnPoint = GameObject.Find("Right Lazer spwan point");
         playerCam = GetComponent<Camera>();
         rb = GetComponent <Rigidbody>();
-        engineSoundSource = GetComponent<AudioSource>();
-        lasersoundsource = GetComponent<AudioSource>();
-        engineSoundClip = Resources.Load<AudioClip>("Sound/Engine");
-        laserSoundclip = Resources.Load<AudioClip>("Sound/Lazer");
+        laser = Resources.Load<GameObject>("Red Lazer");
+        laserSoundclip = Resources.Load<AudioClip>("Sounds/Lazer");
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -86,10 +89,10 @@ public class PlayerControler : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
            GameObject laser1, laser2;
-            laser1 = Instantiate(laser, leftLaserspawnpoint.transform.position, leftLaserspawnpoint.transform.rotation);
-            laser1.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + leftLaserspawnpoint.transform.forward * LazerSpeed;
-            laser2 = Instantiate(laser, rightLazerspawnpoint.transform.position, rightLazerspawnpoint.transform.rotation);
-            laser2.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + rightLazerspawnpoint.transform.forward * LazerSpeed;
+            laser1 = Instantiate(laser, leftLaserSpawnPoint.transform.position, leftLaserSpawnPoint.transform.rotation);
+            laser1.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + leftLaserSpawnPoint.transform.forward * LazerSpeed;
+            laser2 = Instantiate(laser, rightLazerSpawnPoint.transform.position, rightLazerSpawnPoint.transform.rotation);
+            laser2.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + rightLazerSpawnPoint.transform.forward * LazerSpeed;
             lasersoundsource.PlayOneShot(laserSoundclip);
             
         }
