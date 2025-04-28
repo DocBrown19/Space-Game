@@ -7,6 +7,9 @@ using System.Collections;
  * Need cool vfx explosion
  * Needs to shoot lazers
  * Needs to make noise
+ * Make him less of an aimbot
+ * Stoped shooting after a while
+ * Still hits player and zooms behind player
  */
 
 public class EnemyShip : MonoBehaviour

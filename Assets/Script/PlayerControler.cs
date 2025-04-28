@@ -18,6 +18,7 @@ using UnityEngine;
  * Add srvs
  * make it sothe astriods dont spawn in the space staion
  * make a customization menu
+ * Needs a game over screen
  */
 
 

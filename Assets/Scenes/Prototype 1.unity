@@ -179,6 +179,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Explosion 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1007127541784509545, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
       propertyPath: playOnAwake
       value: 0
@@ -1229,6 +1233,10 @@ PrefabInstance:
     - target: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
       propertyPath: m_Name
       value: Enemy Ship
+      objectReference: {fileID: 0}
+    - target: {fileID: 100014, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
       propertyPath: m_LocalPosition.x
