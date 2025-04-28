@@ -119,6 +119,80 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1001 &9299043
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 534669905}
+    m_Modifications:
+    - target: {fileID: 1007127540951276610, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276610, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 23.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127540951276732, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: m_Name
+      value: Explosion 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1007127541784509545, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+      propertyPath: playOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+--- !u!4 &9299044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1007127540951276611, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+  m_PrefabInstance: {fileID: 9299043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &48237918
 GameObject:
   m_ObjectHideFlags: 0
@@ -1083,11 +1157,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0000002, y: 1, z: 1.0000001}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1 &420134970 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 584971958069312738, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-  m_PrefabInstance: {fileID: 519603472}
-  m_PrefabAsset: {fileID: 0}
 --- !u!850595691 &481223275
 LightingSettings:
   m_ObjectHideFlags: 0
@@ -1159,19 +1228,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
       propertyPath: m_Name
-      value: Space_Cargo_Ship
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 400006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.1
+      value: Enemy Ship
       objectReference: {fileID: 0}
     - target: {fileID: 400006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1213,31 +1270,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 9500000, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8774026444223532245, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      propertyPath: m_Name
-      value: Left Lazer spwan point
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9500000, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
+    m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 871238488}
-    - targetCorrespondingSourceObject: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 871238490}
-    - targetCorrespondingSourceObject: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 871238493}
-    - targetCorrespondingSourceObject: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 871238492}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
 --- !u!1 &534669902
 GameObject:
@@ -1258,7 +1294,7 @@ GameObject:
   - component: {fileID: 534669911}
   m_Layer: 0
   m_Name: Main Camera
-  m_TagString: MainCamera
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1337,6 +1373,7 @@ Transform:
   m_Children:
   - {fileID: 2087501720}
   - {fileID: 1110697880}
+  - {fileID: 9299044}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -0.53, y: 447.136, z: 0.766}
 --- !u!54 &534669906
@@ -1544,6 +1581,7 @@ MonoBehaviour:
   lasersoundsource: {fileID: 534669911}
   rightLazerSpawnPoint: {fileID: 1914667921}
   leftLaserSpawnPoint: {fileID: 1920110037}
+  Explosion: {fileID: 1708717162}
 --- !u!82 &534669911
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2908,6 +2946,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ship Model
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4534dec104be08e418b20ba5844a0390, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 4534dec104be08e418b20ba5844a0390, type: 3}
       propertyPath: m_Name
       value: Player Ship
@@ -2915,6 +2957,10 @@ PrefabInstance:
     - target: {fileID: 100002, guid: 4534dec104be08e418b20ba5844a0390, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 4534dec104be08e418b20ba5844a0390, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4534dec104be08e418b20ba5844a0390, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3661,259 +3707,6 @@ Mesh:
     offset: 0
     size: 0
     path: 
---- !u!1 &871238487 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100006, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-  m_PrefabInstance: {fileID: 519603472}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &871238488
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871238487}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6d0fb1b2c950deb418fa0df674969843, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRange: 0
-  currentRangeToPlayer: 0
-  FireRate: 1
-  speed: 100
-  rotationRate: 10
-  LazerSpeed: 50
-  engineSoundSource: {fileID: 871238493}
-  lasersoundsource: {fileID: 871238492}
-  rightLazerSpawnPoint: {fileID: 420134970}
-  leftLaserSpawnPoint: {fileID: 975175229}
---- !u!54 &871238490
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871238487}
-  serializedVersion: 4
-  m_Mass: 6000
-  m_Drag: 1
-  m_AngularDrag: 0.5
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
---- !u!82 &871238492
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871238487}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!82 &871238493
-AudioSource:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 871238487}
-  m_Enabled: 1
-  serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
-  m_PlayOnAwake: 1
-  m_Volume: 1
-  m_Pitch: 1
-  Loop: 0
-  Mute: 0
-  Spatialize: 0
-  SpatializePostEffects: 0
-  Priority: 128
-  DopplerLevel: 1
-  MinDistance: 1
-  MaxDistance: 500
-  Pan2D: 0
-  rolloffMode: 0
-  BypassEffects: 0
-  BypassListenerEffects: 0
-  BypassReverbZones: 0
-  rolloffCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  panLevelCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  spreadCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  reverbZoneMixCustomCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 3
-      time: 0
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-      weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
---- !u!1 &975175229 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8774026444223532245, guid: 77f6ae3287cd2b7418ea5f4d49e71b1e, type: 3}
-  m_PrefabInstance: {fileID: 519603472}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1018466942 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 4534dec104be08e418b20ba5844a0390, type: 3}
@@ -4039,7 +3832,7 @@ GameObject:
   - component: {fileID: 1110697881}
   m_Layer: 0
   m_Name: Aming Tool
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5215,7 +5008,7 @@ GameObject:
   - component: {fileID: 1270656445}
   m_Layer: 0
   m_Name: Aming Tool
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7124,7 +6917,7 @@ GameObject:
   - component: {fileID: 1689200327}
   m_Layer: 0
   m_Name: Aming Tool
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7220,6 +7013,11 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1689200325}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!198 &1708717162 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1007127540951276610, guid: 3ace37360f306cb4aac03640550fa9ef, type: 3}
+  m_PrefabInstance: {fileID: 9299043}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1781375348
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7276,9 +7074,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lazer
       objectReference: {fileID: 0}
+    - target: {fileID: 2195496196935378799, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861530286992705193, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5554325509095361354, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994890917545888603, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 562989552362401099, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
@@ -7907,7 +7717,7 @@ GameObject:
   - component: {fileID: 1914667924}
   m_Layer: 0
   m_Name: Right Lazer spwan point
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7994,7 +7804,7 @@ GameObject:
   - component: {fileID: 1920110040}
   m_Layer: 0
   m_Name: Left Lazer spwan point
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8844,9 +8654,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lazer
       objectReference: {fileID: 0}
+    - target: {fileID: 2195496196935378799, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4861530286992705193, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     - target: {fileID: 5554325509095361354, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7994890917545888603, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 562989552362401099, guid: 7e771648e2f2d6043b33a8c2292d592c, type: 3}

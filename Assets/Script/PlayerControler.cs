@@ -44,6 +44,8 @@ public class PlayerControler : MonoBehaviour
     [SerializeField]
     private GameObject rightLazerSpawnPoint, leftLaserSpawnPoint;
     private Camera playerCam;
+    [SerializeField]
+    private ParticleSystem Explosion;
  
  
 
@@ -104,6 +106,18 @@ public class PlayerControler : MonoBehaviour
 
 
 
+
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if (collider.gameObject.CompareTag("Enemy Laser"));
+        {
+            Explosion.Play();
+           
+
+
+        }
 
     }
 
