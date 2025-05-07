@@ -14,7 +14,7 @@ using System.Collections;
 
 public class EnemyShip : MonoBehaviour
 {   
-    private bool inRangeShoot, inRangeMove, canSeePlayer, canShoot = true, isAggro = true;
+    private bool inRangeShoot, inRangeMove, canSeePlayer, canShoot = true, isAggro = false;
     [SerializeField]
     private float maxRangeShoot, minRangeMove=25f, currentRangeToPlayer, FireRate, speed = 15, rotationRate = 10f, LazerSpeed = 50f;
     private Vector3 dirToPlayer, randomFlightDir;
@@ -42,33 +42,54 @@ public class EnemyShip : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Vector3.Distance(transform.position,player.transform.position) > minRangeMove)
+        currentRangeToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        dirToPlayer = player.transform.position - transform.position;
+
+        if (currentRangeToPlayer > minRangeMove) //moves the enemy tword the player when outside of minimum range
         {
           rb.AddRelativeForce(Vector3.forward * speed * Time.deltaTime, ForceMode.VelocityChange);
           randomFlightDir = new Vector3(Random.Range(-1,2),Random.Range(-1, 2f), 0f); //Generates a random strafe directon for the enemy if it is within minimum range
         }
-        else
+        else// moves enemy 30% of full speed in random direction in order to strafe around the player
         {
           rb.AddForce(randomFlightDir *  0.3f *speed * Time.deltaTime, ForceMode.VelocityChange);
         }
-        dirToPlayer = player.transform.position - transform.position;
-        //Debug.DrawRay(transform.position, dirToPlayer, Color.red);
+  
+       
+
+        if (currentRangeToPlayer < maxRangeShoot)
+        {
+            isAggro = true;
+        }
+        else
+        {
+            isAggro = false;
+        }
+
         Vector3 newDirection = Vector3.RotateTowards(transform.forward, dirToPlayer, rotationRate * Time.deltaTime, 0.0f);
         transform.rotation = Quaternion.LookRotation(newDirection);
-       
+
     }
+
+   
 
     IEnumerator EnemyLazerFireing()
     {
         
-     yield return new WaitForSeconds(FireRate);
-     GameObject laser1, laser2;
-    laser1 = Instantiate(enemyLaser, leftLaserSpawnPoint.transform.position, leftLaserSpawnPoint.transform.rotation);
-    laser1.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + leftLaserSpawnPoint.transform.forward* LazerSpeed;
-    laser2 = Instantiate(enemyLaser, rightLazerSpawnPoint.transform.position, rightLazerSpawnPoint.transform.rotation);
-    laser2.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + rightLazerSpawnPoint.transform.forward* LazerSpeed;
-    lasersoundsource.PlayOneShot(laserSoundclip);
-    StartCoroutine(EnemyLazerFireing());
+     yield return new WaitForSeconds(FireRate);//waits before doing anything 
+
+
+        if (isAggro)//checks whether we are in range to shoot based on the range-check in update
+        {
+            GameObject laser1, laser2;//creates two vareibles to store our created lasers so that we can force them to move once we instantiate them
+
+            laser1 = Instantiate(enemyLaser, leftLaserSpawnPoint.transform.position, leftLaserSpawnPoint.transform.rotation);//creates a laser and places it on the left turret
+            laser1.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + leftLaserSpawnPoint.transform.forward * LazerSpeed;//shoves laser foward 
+            laser2 = Instantiate(enemyLaser, rightLazerSpawnPoint.transform.position, rightLazerSpawnPoint.transform.rotation);//creates a laser and places it on the right turret
+            laser2.GetComponent<Rigidbody>().linearVelocity = rb.linearVelocity + rightLazerSpawnPoint.transform.forward * LazerSpeed;//shoves laser foward 
+            lasersoundsource.PlayOneShot(laserSoundclip);// plays the pew pew this stinks
+        }
+    StartCoroutine(EnemyLazerFireing());//starting a new co-routine that starts this proces again wich alowws the enemy to keep shooting.
     }
     private void OnTriggerEnter(Collider collider)
     {
