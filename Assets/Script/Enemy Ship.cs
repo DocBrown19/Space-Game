@@ -17,8 +17,9 @@ public class EnemyShip : MonoBehaviour
 {
     private bool inRangeShoot, inRangeMove, canSeePlayer, canShoot = false, isAggro = false;
     [SerializeField]
-    private float maxRangeShoot, minRangeMove = 25f, currentRangeToPlayer, FireRate, speed = 15, rotationRate = 10f, LazerSpeed = 50f;
+    private float aggroRange=150, maxRangeShoot, minRangeMove = 25f, currentRangeToPlayer, FireRate, attackSpeed = 15, rotationRate = 10f, LazerSpeed = 50f, MinTimeToChangeDirection= 5f, MaxTimeToChangeDirection=60f, CausalSpeed=10;
     private Vector3 dirToPlayer, randomFlightDir, randomCasualDirection;
+    private Quaternion randomLookRotaion;
     private GameObject player;
     private Rigidbody rb;
     [SerializeField]
@@ -30,6 +31,7 @@ public class EnemyShip : MonoBehaviour
     [SerializeField]
     private ParticleSystem Explosion;
     private List<Vector3> StrafeDirectons = new List<Vector3>();
+    
     void Start()
     {
         StrafeDirectons.Add(Vector3.up);
@@ -60,20 +62,38 @@ public class EnemyShip : MonoBehaviour
         //Movment Section
         if (currentRangeToPlayer > minRangeMove && isAggro) //moves the enemy tword the player when outside of minimum range
         {
-            rb.AddRelativeForce(Vector3.forward * speed * Time.deltaTime, ForceMode.VelocityChange);
+            rb.AddRelativeForce(Vector3.forward * attackSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
             randomFlightDir = StrafeDirectons[Random.Range(0, StrafeDirectons.Count)]; //Generates a random strafe directon for the enemy if it is within minimum range
         }
         else if (currentRangeToPlayer <= minRangeMove && isAggro)// moves enemy 30% of full speed in random direction in order to strafe around the player
         {
-            rb.AddRelativeForce(randomFlightDir * 0.3f * speed * Time.deltaTime, ForceMode.VelocityChange);
-        } else if (!isAggro)//enemy is not aggro, should fly casul
+            rb.AddRelativeForce(randomFlightDir * 0.3f * CausalSpeed * Time.deltaTime, ForceMode.VelocityChange);
+        }else if (!isAggro)//enemy is not aggro, should fly casul
         {
-            //transform.rotation = Quaternion.LookRotation(randomCasualDirection, transform.up);
-            rb.AddRelativeForce(Vector3.forward * speed * Time.deltaTime, ForceMode.VelocityChange);
+            randomLookRotaion = Quaternion.Euler(randomCasualDirection);
+            transform.rotation = Quaternion.Lerp(transform.rotation,randomLookRotaion, 2f * Time.deltaTime);
+            rb.AddRelativeForce(Vector3.forward * attackSpeed * Time.deltaTime, ForceMode.VelocityChange);
 
         }
 
+        if (isAggro)
+        {
+            //looks at the player, but keeps enemy's own'up value
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, dirToPlayer, rotationRate * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection, transform.up);
+
+        }
+
+        if(currentRangeToPlayer <= aggroRange)
+        {
+            isAggro = true;
+
+        }
+        else
+        {
+            isAggro = false;
+        }
 
 
         if (currentRangeToPlayer < maxRangeShoot)
@@ -84,9 +104,7 @@ public class EnemyShip : MonoBehaviour
         {
             canShoot = false;
         }
-        //looks at the player, but keeps enemy's own'up value
-        Vector3 newDirection = Vector3.RotateTowards(transform.forward, dirToPlayer, rotationRate * Time.deltaTime, 0.0f);
-        transform.rotation = Quaternion.LookRotation(newDirection, transform.up);
+        
 
     }
 
@@ -113,7 +131,7 @@ public class EnemyShip : MonoBehaviour
 
     IEnumerator ChangeFlightDirection()
     {
-        yield return new WaitForSeconds(Random.Range(5f, 120f));
+        yield return new WaitForSeconds(Random.Range(MinTimeToChangeDirection, MaxTimeToChangeDirection));
         randomCasualDirection = new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360));
         StartCoroutine(ChangeFlightDirection());
     }
